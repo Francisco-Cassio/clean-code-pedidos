@@ -1,11 +1,6 @@
-def total_centavos(precos, vip=False):
-    s = 0
-    for p in precos:
-        s = s + p
-    if vip:
-        if s >= 10000:
-            return s - s // 10
-        else:
-            return s
-    else:
-        return s
+﻿def total_centavos(precos, vip=False):
+    subtotal = sum(precos)
+    if vip and subtotal >= 10000:
+        desconto = subtotal // 10
+        return subtotal - desconto
+    return subtotal
